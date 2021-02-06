@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nixon:
+  name: Lázaro Nixon
+  username: lazaronixon
+  email: lazaronixon@hotmail.com
+  password_digest: <%= BCrypt::Password.create("secret") %>
+
+javier:
+  name: Javier Fonseca
+  username: javierfonseca
+  email: javier.fonseca@koombea.com
+  password_digest: <%= BCrypt::Password.create("secret") %>
+
+alvaro:
+  name: Alvaro Insignares
+  username: alvaroinsignares
+  email: alvaro@koombea.com
+  password_digest: <%= BCrypt::Password.create("secret") %>
+
+daniel:
+  name: Daniel Osorio
+  username: danielosorio
+  email: daniel.osorio@koombea.com
+  password_digest: <%= BCrypt::Password.create("secret") %>

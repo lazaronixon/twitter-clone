@@ -1,0 +1,39 @@
+@import "sass-zero/variables";
+
+.page {
+  display: flex;
+  min-height: $min-h-screen;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: $w-3-12;
+  }
+
+  &__content {
+    border-width: $border-0 $border;
+    border-color: $gray-200;
+    width: $w-5-12;
+  }
+
+  &__content-header {
+    padding: $size-3 $size-4;
+    border-bottom-width: $border;
+    border-color: $gray-200;
+  }
+
+  &__content-body {
+    padding: $size-4 $size-4;
+  }
+
+  &__left-container {
+    padding: $size-3 $size-4;
+    width: 280px;
+  }
+
+  &__left-container-bottom {
+    position: absolute;
+    bottom: 0;
+  }
+}

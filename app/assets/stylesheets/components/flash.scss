@@ -1,0 +1,22 @@
+@import "sass-zero/variables";
+
+.flash {
+  position: fixed;
+  text-align: center;
+  text-size: $text-sm;
+  font-weight: $font-bold;
+  top: $size-14;
+  left: $size-0;
+  right: $size-0;
+  z-index: $z-10;
+  animation: appear-then-fade 7s 300ms both;
+
+  &__content {
+    display: inline-flex;
+    box-shadow: $shadow-lg;
+    padding: $size-1 $size-4;
+    background: rgba($gray-800, $opacity-75);
+    border-radius: $rounded-full;
+    color: $white;
+  }
+}

@@ -1,0 +1,14 @@
+<header class="page__left">
+  <div class="page__left-container">
+
+    <h1 class="push-lg--bottom txt--2xl"><%= link_to "TC", root_path %></h1>
+    <div class="push-md--bottom"><%= link_to "Home", root_path %></div>
+    <div class="push-md--bottom"><%= link_to "Sign out", sign_out_path, method: :delete %></div>
+    <div class="push-md--bottom"><%= link_to "Tweet", new_tweet_path, class: "btn btn--primary align--center u-full-width" %></div>
+
+    <div class="page__left-container-bottom">
+      <h1 class="txt--md flush"><%= Current.user.name %></h1>
+      <p><%= at Current.user %></p>
+    </div>
+  </div>
+</header>

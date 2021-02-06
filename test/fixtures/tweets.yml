@@ -1,0 +1,5 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+i_am_so_happy:
+  message: I am so Happy!
+  user: nixon

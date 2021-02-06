@@ -1,0 +1,211 @@
+@import "sass-zero/variables";
+@import "sass-zero/mixins";
+
+$font-family: $font-sans;
+
+$radius-input:  $rounded-full;
+$radius-button: $rounded-full;
+
+:root {
+  --color-bg--main:    #{$white};
+  --color-bg--surface: #{$gray-100};
+  --color-primary:     #{$blue-500};
+  --color-text:        #{$gray-900};
+  --color-focus-ring:  #{rgba($blue-500, $opacity-50)};
+
+  --image-bg-select:        url('data:image/svg+xml,<svg viewBox="0 0 20 20" fill="none"  xmlns="http://www.w3.org/2000/svg"><path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
+  --image-checked-checkbox: url('data:image/svg+xml,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/></svg>');
+  --image-checked-radio:    url('data:image/svg+xml,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>');
+}
+
+html {
+  background: var(--color-bg--main);
+  color: var(--color-text);
+  font-family: $font-family;
+  font-size: 16px;
+}
+
+.btn {
+  border-radius: $radius-button;
+  border-width: $border;
+  display: inline-block;
+  font-weight: $font-bold;
+  padding: $size-2 $size-4;
+  cursor: pointer;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: $opacity-50;
+  }
+
+  &--primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-bg--main);
+  }
+
+  &--secondary {
+    background-color: var(--color-bg--main);
+    border-color: var(--color-primary);
+  }
+
+  &--tertiary {
+    background-color: $transparent;
+    border-color: $transparent;
+  }
+}
+
+.input {
+  resize: none;  
+  appearance: none;
+  background-color: $transparent;
+  border-radius: $radius-input;
+  border-width: $border;
+  padding: $size-2 $size-3;
+  width: $size-full;
+
+  &--select {
+    background-image: var(--image-bg-select);
+    background-position: right $size-2 center;
+    background-repeat: no-repeat;
+    background-size: auto $size-5;
+    padding-right: $size-8;
+  }
+
+  &:focus {
+    box-shadow: ring($color: var(--color-focus-ring));
+    @include outline-none;
+  }
+}
+
+.checkbox {
+  border-radius: $rounded;
+  @include input-selection(var(--color-primary));
+
+  &:checked {
+    background-image: var(--image-checked-checkbox);
+    @include checked;
+  }
+
+  &:focus {
+    box-shadow: ring($color: var(--color-focus-ring));
+    @include outline-none;
+  }
+}
+
+.radio {
+  border-radius: $rounded-full;
+  @include input-selection(var(--color-primary));
+
+  &:checked {
+    background-image: var(--image-checked-radio);
+    @include checked;
+  }
+
+  &:focus {
+    box-shadow: ring($color: var(--color-focus-ring));
+    @include outline-none;
+  }
+}
+
+blockquote {
+  border-left-width: $border-4;
+  padding: $size-3 $size-4;
+}
+
+code {
+  background-color: var(--color-bg--surface);
+  border-radius: $rounded;
+  font-size: $text-sm;
+  margin: $size-0 $size-1;
+  padding: $size-1 $size-2;
+  white-space: nowrap;
+}
+
+pre {
+  background-color: var(--color-bg--surface);
+  border-left-width: $border-4;
+  overflow-y: hidden;
+
+  & > code {
+    border-radius: $rounded-none;
+    display: block;
+    padding: $size-2 $size-3;
+    white-space: pre;
+  }
+}
+
+hr {
+  margin: $size-6 $size-0;
+}
+
+a {
+  font-weight: $font-bold;
+}
+
+ul, ol {
+  padding-left: $size-10;
+}
+
+ul {
+  list-style: disc outside;
+}
+
+ol {
+  list-style: decimal outside;
+}
+
+label, legend, dt {
+  margin-bottom: $size-1;
+}
+
+h1, h2, h3, h4, h5, h6, .hdg {
+  margin-bottom: $size-4;
+}
+
+fieldset, .input {
+  margin-bottom: $size-6;
+}
+
+blockquote, figure, p, pre, table, ul, ol, dl {
+  margin-bottom: $size-6;
+}
+
+table {
+  width: $size-full;
+}
+
+td, th {
+  border-bottom-width: $border;
+  padding: $size-3 $size-4;
+  text-align: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, .hdg {
+  font-weight: $font-bold;
+  line-height: $leading-tight;
+}
+
+h1, .hdg--4xl {
+  font-size: $text-4xl;
+}
+
+h2, .hdg--3xl {
+  font-size: $text-3xl;
+}
+
+h3, .hdg--2xl {
+  font-size: $text-2xl;
+}
+
+h4, .hdg--xl {
+  font-size: $text-xl;
+}
+
+h5, .hdg--lg {
+  font-size: $text-lg;
+}
+
+h6, .hdg--base {
+  font-size: $text-base;
+}

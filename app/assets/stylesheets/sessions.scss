@@ -1,0 +1,13 @@
+@import "sass-zero/variables";
+
+.container--session {
+  text-align: center;
+  max-width: $max-w-md;
+}
+
+.nav-session {
+  display: flex;
+  justify-content: center;
+  padding: $size-2 $size-3;
+  margin-bottom: $size-10;
+}
