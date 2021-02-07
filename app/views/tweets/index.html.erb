@@ -4,4 +4,12 @@
   <header class="page__content-header">
     <h1 class="txt--xl flush">Home</h1>
   </header>
+
+  <section class="page__content-body">
+    <section>
+      <%= render @page.records %>
+
+      <%= link_to "Next page", tweets_path(page: @page.next_param), class: "btn btn--secondary" unless @page.last? %>
+    </section>
+  <section>
 </main>

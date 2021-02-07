@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   def index
+    set_page_and_extract_portion_from Current.user.feed.reverse_chronologically, per_page: 10
   end
 
   def new

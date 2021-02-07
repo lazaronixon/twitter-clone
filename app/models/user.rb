@@ -32,4 +32,13 @@ class User < ApplicationRecord
   def follow
     Current.user.following_relationships.create!(target: self)
   end
+
+  def feed
+    Tweet.where(user: self).or(following_tweets)
+  end
+
+  private
+    def following_tweets
+      Tweet.where(user: following)
+    end
 end
