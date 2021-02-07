@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'registration/new'
   resources :users, only: :show do
     scope module: :users do
       resource :follow,    only: :create
@@ -12,8 +13,12 @@ Rails.application.routes.draw do
   resources :follows, only: %i[ new create ]
 
   # Authentication
-  get    "sign_in",  to: "sessions#new"
-  post   "sign_in",  to: "sessions#create"
+  get  "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
+
+  get  "sign_in",  to: "sessions#new"
+  post "sign_in",  to: "sessions#create"
+
   delete "sign_out", to: "sessions#destroy"
 
   # Username

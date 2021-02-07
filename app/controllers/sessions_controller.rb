@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate, except: :destroy
+  skip_before_action :authenticate
 
   def new
-    @user = User.new; render layout: false
+    @user = User.new
   end
 
   def create
-    user = User.find_by(username: user_params[:username])
-    if user && user.authenticate(user_params[:password])
-      sign_in user
+    @user = User.find_by(username: user_params[:username])
+    if @user && @user.authenticate(user_params[:password])
+      sign_in @user
     else
       redirect_to sign_in_url, flash: { username_hint: params[:user][:username], notice: "Username or password are wrong!" }
     end

@@ -1,39 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Sign in to Twitter Clone</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<main class="container container--session">
+  <header>
+    <h1>Welcome back. <br> Let’s sign in.</h1>
+  </header>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <section>
+    <%= form_with(model: @user, url: sign_in_path, local: true) do |f| %>
 
-  <body>
-    <%= render "shared/flash" %>
+      <%= f.label :username, "Enter your user name", class: "u-display-b txt--bold" %>
+      <%= f.text_field :username, value: flash[:username_hint], required: true, autofocus: true, autocomplete: "username", autocorrect: :off, autocapitalize: :off, class: "input" %>
 
-    <nav class="nav-session">
-      <h1 class="flush">TC</h1>
-    </nav>
+      <%= f.label :password, "And your password", class: "u-display-b txt--bold" %>
+      <%= f.password_field :password, autocomplete: "current-password", required: true, class: "input" %>
 
-    <main class="container container--session">
-      <header>
-        <h1>Welcome back. <br> Let’s sign in.</h1>
-      </header>
-
-      <section>
-        <%= form_with(model: @user, url: sign_in_path) do |f| %>
-
-          <%= f.label :username, "Enter your user name", class: "u-display-b txt--bold" %>
-          <%= f.text_field :username, value: flash[:username_hint], required: true, autofocus: true, autocomplete: "username", autocorrect: :off, autocapitalize: :off, class: "input" %>
-
-          <%= f.label :password, "And your password", class: "u-display-b txt--bold" %>
-          <%= f.password_field :password, autocomplete: "current-password", required: true, autocorrect: :off, autocapitalize: :off, class: "input" %>
-
-          <%= f.submit "Sign in", class: "btn btn--primary" %>
-        <% end %>
-      </section>
-    </main>
-  </body>
-</html>
+      <%= f.submit "Sign in", class: "btn btn--primary push-md--bottom" %>
+      <p>If you don't have a account sign up <%= link_to "here", sign_up_path %></p>
+    <% end %>
+  </section>
+</main>
