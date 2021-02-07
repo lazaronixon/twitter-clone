@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create name: "Lázaro Nixon", username: "lazaronixon", email: "lazaronixon@hotmail.com", password: "secret"
+User.create name: "Javier Fonseca", username: "javierfonseca", email: "javier.fonseca@koombea.com", password: "secret"
+User.create name: "Alvaro Insignares", username: "alvaroinsignares", email: "lalvaro@koombea.com", password: "secret"
+User.create name: "Daniel Osorio", username: "danielosorio", email: "daniel.osorio@koombea.com", password: "secret"

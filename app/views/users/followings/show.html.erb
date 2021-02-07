@@ -1,0 +1,25 @@
+<% content_for :title, "People followed by #{format_user(@user)} / Twitter Clone" %>
+
+<main class="page__content">
+  <header class="page__content-header">
+    <div class="push-md--bottom">
+      <h1 class="txt--xl flush"><%= @user.name %></h1>
+      <div class="txt--sm"><%= at @user %></div>
+    </div>
+
+    <div class="flex flex--items-center flex--justify-between">
+      <h2 class="txt--lg flush">Following</h2>
+      <%= link_to "Follow another user", new_follow_path, class: "btn btn--secondary" %>
+    </div>
+  </header>
+
+  <section class="page__content-body">
+    <% @page.records.each do |user| %>
+      <article class="push-lg--ends">
+        <%= link_to "#{user.name} #{at user}", user %>
+      </article>
+    <% end %>
+
+    <%= link_to "Next page", user_following_path(@user, page: @page.next_param), class: "btn btn--secondary" unless @page.last? %>
+  <section>
+</main>

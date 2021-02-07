@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_200818) do
+ActiveRecord::Schema.define(version: 2021_02_07_001128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "relationships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "target_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["target_id", "user_id"], name: "index_relationships_on_target_id_and_user_id", unique: true
+    t.index ["user_id", "target_id"], name: "index_relationships_on_user_id_and_target_id", unique: true
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.text "message"

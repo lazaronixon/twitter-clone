@@ -5,7 +5,7 @@
   text-align: center;
   text-size: $text-sm;
   font-weight: $font-bold;
-  top: $size-14;
+  top: $size-10;
   left: $size-0;
   right: $size-0;
   z-index: $z-10;
@@ -19,4 +19,8 @@
     border-radius: $rounded-full;
     color: $white;
   }
+}
+
+[data-turbolinks-preview] .flash {
+  display: none;
 }
