@@ -14,11 +14,7 @@
   </header>
 
   <section class="page__content-body">
-    <% @page.records.each do |user| %>
-      <article class="push-lg--ends">
-        <%= link_to "#{user.name} #{at user}", user %>
-      </article>
-    <% end %>
+    <%= render partial: "/users/user", collection: @page.records %>
 
     <%= link_to "Next page", user_following_path(@user, page: @page.next_param), class: "btn btn--secondary" unless @page.last? %>
   <section>

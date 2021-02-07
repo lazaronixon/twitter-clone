@@ -13,12 +13,7 @@
   </header>
 
   <section class="page__content-body">
-    <% @page.records.each do |user| %>
-      <article class="flex flex--items-center flex--justify-between push-lg--ends">
-        <%= link_to "#{user.name} #{at user}", user %>
-        <%= link_to "Follow", user_follow_path(user), method: :post, class: "btn btn--secondary" unless user.followed? %>
-      </article>
-    <% end %>
+    <%= render partial: "/users/user", collection: @page.records %>
 
     <%= link_to "Next page", user_followers_path(@user, page: @page.next_param), class: "btn btn--secondary" unless @page.last? %>
   <section>

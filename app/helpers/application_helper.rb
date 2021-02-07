@@ -1,5 +1,5 @@
 module ApplicationHelper
   def title
-    content_for(:title) || Rails.application.class.to_s.split("::").first
+    content_for(:title) || "Twitter Clone"
   end
 end
