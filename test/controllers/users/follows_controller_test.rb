@@ -12,7 +12,7 @@ class Users::FollowersControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:notice], "You are now following #{users(:daniel).name}"
   end
 
-  test "following someone that is already followed" do
+  test "following someone already following" do
     assert_raises ActiveRecord::RecordNotUnique do
       post user_follow_url(users(:javier))
     end

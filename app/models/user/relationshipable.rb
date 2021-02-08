@@ -17,11 +17,12 @@ module User::Relationshipable
     followers.exists?(Current.user.id) || current?
   end
 
-  def current?
-    self == Current.user
-  end
-
   def follow
     Current.user.following_relationships.create!(target: self)
   end
+
+  private
+    def current?
+      self == Current.user
+    end
 end

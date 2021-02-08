@@ -1,0 +1,8 @@
+@import "sass-zero/variables";
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: $size-2 $size-3;
+  margin-bottom: $size-10;
+}

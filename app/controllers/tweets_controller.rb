@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
     @tweet = Current.user.tweets.build(tweet_params)
     @tweet.save!
 
-    redirect_to tweets_path, notice: "Tweet was successfully created."
+    redirect_to tweets_path, notice: "Tweet was successfully created"
   end
 
   private

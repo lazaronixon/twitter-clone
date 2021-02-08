@@ -3,3 +3,7 @@
 i_am_so_happy:
   message: I am so Happy!
   user: nixon
+
+i_am_so_happy_too:
+  message: I am so Happy too!
+  user: javier
