@@ -1,15 +1,16 @@
 <header class="page__left">
   <div class="page__left-container">
+    <div>
+      <div class="push-xs--bottom"><%= link_to "", root_path, class: "btn btn--tertiary btn--with-icon btn--logo-icon" %></div>
+      <div class="push-xs--bottom"><%= link_to "Home", root_path, class: "btn btn--tertiary btn--with-icon btn--home-icon" %></div>
+      <div class="push-xs--bottom"><%= link_to "Profile", Current.user, class: "btn btn--tertiary btn--with-icon btn--profile-icon" %></div>
+      <div class="push-xs--bottom"><%= link_to "Sign out", sign_out_path, method: :delete, class: "btn btn--tertiary btn--with-icon btn--more-icon" %></div>
+      <div class="push-xs--bottom"><%= link_to "Tweet", new_tweet_path, class: "btn btn--primary align--center u-full-width" %></div>
+    </div>
 
-    <h1 class="push-lg--bottom txt--2xl"><%= link_to "TC", root_path %></h1>
-    <div class="push-md--bottom"><%= link_to "Home", root_path %></div>
-    <div class="push-md--bottom"><%= link_to "Profile", Current.user %></div>
-    <div class="push-md--bottom"><%= link_to "Sign out", sign_out_path, method: :delete %></div>
-    <div class="push-md--bottom"><%= link_to "Tweet", new_tweet_path, class: "btn btn--primary align--center u-full-width" %></div>
-
-    <div class="page__left-container-bottom">
-      <h1 class="txt--md flush"><%= Current.user.name %></h1>
-      <p><%= at Current.user %></p>
+    <div class="u-full-width">
+      <h1 class="flush txt--ellipsis txt--md"><%= Current.user.name %></h1>
+      <p class="flush txt--ellipsis"><%= at Current.user %></p>
     </div>
   </div>
 </header>

@@ -5,4 +5,13 @@
   justify-content: center;
   padding: $size-2 $size-3;
   margin-bottom: $size-10;
+
+  &__logo {
+    height: $size-12;
+    width:  $size-10;
+    background-position: center;
+    background-image: image-url("icons/logo.svg");
+    background-repeat: no-repeat;
+    background-size: auto $size-10;
+  }
 }

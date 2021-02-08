@@ -1,39 +1,49 @@
 @import "sass-zero/variables";
 
 .page {
-  display: flex;
+  display: grid;
+  grid-template-columns: $grid-cols-12;
   min-height: $min-h-screen;
 
   &__left {
+    grid-column: $col-span-3;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: $w-3-12;
-  }
-
-  &__content {
-    border-width: $border-0 $border;
-    border-color: $gray-200;
-    width: $w-5-12;
-  }
-
-  &__content-header {
-    padding: $size-3 $size-4;
-    border-bottom-width: $border;
-    border-color: $gray-200;
-  }
-
-  &__content-body {
-    padding: $size-4 $size-4;
   }
 
   &__left-container {
-    padding: $size-3 $size-4;
-    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: fixed;
+    overflow: hidden;
+    padding: $size-2 $size-1;
+    height: $size-full;
+    width: 95px;
+
+    text-align: right;
   }
 
-  &__left-container-bottom {
-    position: absolute;
-    bottom: 0;
+  &__content {
+    grid-column: $col-span-9;
+    border-width: $border-0 $border;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .page {
+    &__left-container {
+      padding: $size-2 $size-3;
+      text-align: left;
+      width: 250px;
+    }
+
+    &__content {
+      grid-column: $col-span-5;
+      border-width: $border-0 $border;
+      border-color: $gray-200;
+    }
   }
 }

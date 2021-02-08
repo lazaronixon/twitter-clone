@@ -1,22 +1,19 @@
 <% content_for :title, "#{format_user(@user)} / Twitter Clone" %>
 
 <main class="page__content">
-  <header class="page__content-header">
+  <header class="content-header">
     <h1 class="txt--xl flush"><%= @user.name %></h1>
     <div class="txt--sm"><%= @user.tweets_size %> Tweets</div>
   </header>
 
-  <section class="page__content-body">
-    <ul class="list--inline list--flush">
+  <section class="content-body">
+    <ul class="list--inline unpad">
       <li><%= link_to "#{@user.following_size} Following", user_following_path(@user) %></li>
       <li><%= link_to "#{@user.followers_size} Followers", user_followers_path(@user) %></li>
       <li><%= link_to "Follow", user_follow_path(@user), method: :post, class: "btn btn--secondary" unless @user.followed? %></li>
     </ul>
 
-    <section>
-      <%= render @page.records %>
-
-      <%= link_to "Next page", user_path(@user, page: @page.next_param), class: "btn btn--secondary" unless @page.last? %>
-    </section>
+    <%= render @page.records %>
+    <%= link_to "Next page", user_path(@user, page: @page.next_param), class: "btn btn--secondary" unless @page.last? %>
   <section>
 </main>

@@ -1,4 +1,4 @@
-<article class="flex flex--items-center flex--justify-between push-lg--ends">
+<article class="flex flex--items-center flex--justify-between push-lg--bottom">
   <%= link_to "#{user.name} #{at user}", user %>
   <%= link_to "Follow", user_follow_path(user), method: :post, class: "btn btn--secondary" unless user.followed? %>
 </article>

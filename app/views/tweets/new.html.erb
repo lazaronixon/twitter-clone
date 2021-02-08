@@ -1,11 +1,11 @@
 <% content_for :title, "Home / Twitter Clone" %>
 
 <main class="page__content">
-  <header class="page__content-header">
+  <header class="content-header">
     <h1 class="txt--xl flush">New Tweet</h1>
   </header>
 
-  <section class="page__content-body">
+  <section class="content-body">
     <%= form_with(model: @tweet) do |form| %>
       <%= form.text_area :message, class: "input", required: true, maxlength: 280, autofocus: true, placeholder: "What's happening?" %>
       <%= form.submit class: "btn btn--primary" %>

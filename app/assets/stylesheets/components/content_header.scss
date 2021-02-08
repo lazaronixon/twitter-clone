@@ -1,0 +1,10 @@
+@import "sass-zero/variables";
+
+.content-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg--main);
+  padding: $size-3 $size-4;
+  border-bottom-width: $border;
+  border-color: $gray-200;
+}

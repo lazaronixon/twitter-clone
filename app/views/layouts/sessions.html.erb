@@ -8,11 +8,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" >
   </head>
 
   <body>
     <nav class="navbar">
-      <h1 class="flush">TC</h1>
+      <div class="navbar__logo" />
     </nav>
 
     <%= render "shared/flash" %>
