@@ -3,6 +3,8 @@ module User::Feedable
 
   included do
     has_many :tweets, dependent: :destroy
+
+    delegate :size, prefix: true, to: :tweets
   end
 
   def feed
