@@ -8,9 +8,9 @@
 
   <section class="content-body">
     <ul class="list--inline unpad">
-      <li><%= link_to "#{@user.following_size} Following", user_following_path(@user) %></li>
-      <li><%= link_to "#{@user.followers_size} Followers", user_followers_path(@user) %></li>
-      <li><%= link_to "Follow", user_follow_path(@user), method: :post, class: "btn btn--secondary" unless @user.followed? %></li>
+      <li><%= link_to "#{@user.following_size} Following", [@user, :following] %></li>
+      <li><%= link_to "#{@user.followers_size} Followers", [@user, :followers] %></li>
+      <li><%= link_to "Follow", [@user, :follow], method: :post, class: "btn btn--secondary" unless @user.followed? %></li>
     </ul>
 
     <%= render @page.records %>
