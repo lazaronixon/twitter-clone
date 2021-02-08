@@ -16,6 +16,10 @@ class RelationshipsController < ApplicationController
 
   private
     def set_user
-      @user = User.find_by!(username: params[:username])
+      if @user = User.find_by(username: params[:username])
+        # Nice, I found this user!
+      else
+        redirect_to new_relationship_path, notice: "User not found!"
+      end
     end
 end
