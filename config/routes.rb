@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'registration/new'
   resources :users, only: :show do
     scope module: :users do
       resource :follow,    only: :create
@@ -10,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: %i[ new create ]
-  resources :tweets,        only: %i[ index new create ]  
+  resources :tweets,        only: %i[ index new create ]
 
   # Authentication
   get  "sign_up", to: "registrations#new"
