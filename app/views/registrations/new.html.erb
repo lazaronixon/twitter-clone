@@ -5,7 +5,7 @@
 
   <section>
     <% if @user.errors.any? %>
-      <ul id="error_explanation" class="push-lg-ends">
+      <ul class="list--flush push-md">
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>

@@ -13,7 +13,7 @@ class Users::FollowersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "following someone already following" do
-    assert_raises ActiveRecord::RecordNotUnique do
+    assert_raises ActiveRecord::RecordInvalid do
       post user_follow_url(users(:javier))
     end
   end

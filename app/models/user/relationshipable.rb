@@ -18,7 +18,7 @@ module User::Relationshipable
   end
 
   def follow
-    Current.user.following_relationships.create!(target: self)
+    followers_relationships.create!(user: Current.user)
   end
 
   private

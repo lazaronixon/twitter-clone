@@ -21,12 +21,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
       post sign_up_url, params: { user: { name: @user.name, username: @user.username, email: @user.email, password: "secret", password_confirmation: "secret" } }
     end
 
-    assert_select "ul#error_explanation li" do |errors|
-      assert_equal "Username has already been taken", errors[0].content
-      assert_equal "Email has already been taken",    errors[1].content
-    end
-
-    assert_response :success
+    assert_response :unprocessable_entity
   end
 
 end

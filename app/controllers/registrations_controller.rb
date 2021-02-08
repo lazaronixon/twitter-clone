@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
     if @user.save
       sign_in @user
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

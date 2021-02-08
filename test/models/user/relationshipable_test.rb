@@ -30,7 +30,7 @@ class User::RelationshipableTest < ActiveSupport::TestCase
   end
 
   test "following someone already following" do
-    assert_raises ActiveRecord::RecordNotUnique do
+    assert_raises ActiveRecord::RecordInvalid do
       users(:javier).follow
     end
   end

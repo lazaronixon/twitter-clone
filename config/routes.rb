@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tweets,  only: %i[ index new create ]
-  resources :follows, only: %i[ new create ]
+  resources :relationships, only: %i[ new create ]
+  resources :tweets,        only: %i[ index new create ]  
 
   # Authentication
   get  "sign_up", to: "registrations#new"
