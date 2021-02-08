@@ -13,19 +13,14 @@ module User::Relationshipable
   end
 
   def following?
-    following.exists?(Current.user.id) || current?
+    following.exists?(Current.user.id)
   end
 
   def followed?
-    followers.exists?(Current.user.id) || current?
+    followers.exists?(Current.user.id)
   end
 
   def follow
     followers_relationships.create!(user: Current.user)
   end
-
-  private
-    def current?
-      self == Current.user
-    end
 end

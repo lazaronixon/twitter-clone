@@ -23,4 +23,12 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  test "following myself" do
+    assert_no_difference("Relationship.count") do
+       post relationships_url, params: { username: "lazaronixon" }
+    end
+
+    assert_response :unprocessable_entity
+  end
+
 end

@@ -4,7 +4,7 @@ module User::Registrable
   included do
     has_secure_password
 
-    scope :alphabetically, -> { order :name }    
+    scope :alphabetically, -> { order :name }
 
     validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }
 
@@ -12,4 +12,8 @@ module User::Registrable
     validates :username, presence: true, uniqueness: { case_sensitive: false }
     validates :email,    presence: true, uniqueness: { case_sensitive: false }
   end
+
+  def current?
+    self == Current.user
+  end  
 end

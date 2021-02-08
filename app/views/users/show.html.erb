@@ -10,7 +10,7 @@
     <ul class="list--inline unpad">
       <li><%= link_to "#{@user.following_size} Following", [@user, :following] %></li>
       <li><%= link_to "#{@user.followers_size} Followers", [@user, :followers] %></li>
-      <li><%= link_to "Follow", [@user, :follow], method: :post, class: "btn btn--secondary" unless @user.followed? %></li>
+      <li><%= link_to "Follow", [@user, :follow], method: :post, class: "btn btn--secondary" unless (@user.followed? || @user.current?) %></li>
     </ul>
 
     <%= render @page.records %>

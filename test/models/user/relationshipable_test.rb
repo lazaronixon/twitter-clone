@@ -3,10 +3,6 @@ require "test_helper"
 class User::RelationshipableTest < ActiveSupport::TestCase
   setup { Current.user = users(:nixon) }
 
-  test "should be following myself" do
-    assert users(:nixon).following?
-  end
-
   test "should be following me" do
     assert users(:javier).following?
   end
@@ -34,4 +30,10 @@ class User::RelationshipableTest < ActiveSupport::TestCase
       users(:javier).follow
     end
   end
+
+  test "following myself" do
+    assert_raises ActiveRecord::RecordInvalid do
+      users(:nixon).follow
+    end
+  end  
 end
