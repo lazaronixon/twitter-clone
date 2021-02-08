@@ -5,8 +5,8 @@ module User::Relationshipable
     has_many :followers_relationships, class_name: "Relationship", foreign_key: "target_id", dependent: :destroy
     has_many :following_relationships, class_name: "Relationship", foreign_key: "user_id",   dependent: :destroy
 
-    has_many :followers, through: :followers_relationships, source: :user
-    has_many :following, through: :following_relationships, source: :target
+    has_many :followers, through: :followers_relationships, source: :user,   counter_cache: :followers_count
+    has_many :following, through: :following_relationships, source: :target, counter_cache: :following_count
   end
 
   def following?
