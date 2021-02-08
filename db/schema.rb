@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 2021_02_07_001128) do
     t.bigint "target_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["target_id", "user_id"], name: "index_relationships_on_target_id_and_user_id", unique: true
+    t.index ["target_id"], name: "index_relationships_on_target_id"
     t.index ["user_id", "target_id"], name: "index_relationships_on_user_id_and_target_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "tweets", force: :cascade do |t|

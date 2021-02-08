@@ -7,7 +7,8 @@ class CreateRelationships < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
+    add_index :relationships, :user_id
+    add_index :relationships, :target_id
     add_index :relationships, [:user_id, :target_id], unique: true
-    add_index :relationships, [:target_id, :user_id], unique: true
   end
 end
