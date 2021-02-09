@@ -1,12 +1,32 @@
 <header class="page__left">
   <div class="page__left-container">
-    <div>
-      <div class="push-xs--bottom"><%= link_to "", root_path, class: "btn btn--tertiary btn--with-icon btn--logo-icon" %></div>
-      <div class="push-xs--bottom"><%= link_to "Home", root_path, class: "btn btn--tertiary btn--with-icon btn--home-icon" %></div>
-      <div class="push-xs--bottom"><%= link_to "Profile", Current.user, class: "btn btn--tertiary btn--with-icon btn--profile-icon" %></div>
-      <div class="push-xs--bottom"><%= link_to "Sign out", sign_out_path, method: :delete, class: "btn btn--tertiary btn--with-icon btn--more-icon" %></div>
-      <div class="push-xs--bottom"><%= link_to "Tweet", new_tweet_path, class: "btn btn--primary align--center u-full-width" %></div>
-    </div>
+    <nav class="page__left-navigator">
+      <div class="push-md--bottom">
+        <%= link_to "", root_path, class: "btn btn--tertiary btn--with-icon btn--logo-icon" %>
+      </div>
+
+      <div class="push-md--bottom">
+        <%= link_to root_path, class: "btn btn--tertiary btn--with-icon btn--home-icon" do %>
+          <span class="page__menu-text">Home</span>
+        <% end %>
+      </div>
+
+      <div class="push-md--bottom">
+        <%= link_to Current.user, class: "btn btn--tertiary btn--with-icon btn--profile-icon" do %>
+          <span class="page__menu-text">Profile</span>
+        <% end %>
+      </div>
+
+      <div class="push-md--bottom">
+        <%= link_to sign_out_path, method: :delete, class: "btn btn--tertiary btn--with-icon btn--more-icon" do %>
+          <span class="page__menu-text">Sign out</span>
+        <% end %>
+      </div>
+
+      <div class="push-md--bottom">
+        <%= link_to "Tweet", new_tweet_path, class: "btn btn--primary align--center u-full-width" %>
+      </div>
+    </nav>
 
     <div class="u-full-width">
       <h1 class="flush txt--ellipsis txt--md"><%= Current.user.name %></h1>

@@ -15,7 +15,7 @@
     <% end %>
 
     <%= form_with(url: relationships_path, local: true) do |form| %>
-      <%= form.text_field :username, class: "input", required: true, autofocus: true, placeholder: "Username" %>
+      <%= form.text_field :username, class: "input", required: true, autofocus: true, autocomplete: :off, placeholder: "Username" %>
       <%= form.submit "Follow user", class: "btn btn--secondary" %>
     <% end %>
   <section>

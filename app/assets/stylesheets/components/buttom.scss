@@ -5,6 +5,12 @@
     color: var(--color-primary);
   }
 
+  &--small {
+    font-size: $text-sm;
+    padding-top: $size-1;
+    padding-bottom: $size-1;
+  }  
+
   &--with-icon {
     padding-left: $size-8;
     background-position: $size-2;

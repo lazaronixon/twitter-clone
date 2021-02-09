@@ -26,6 +26,10 @@
     text-align: right;
   }
 
+  &__menu-text {
+    display: none;
+  }
+
   &__content {
     grid-column: $col-span-9;
     border-width: $border-0 $border;
@@ -44,6 +48,10 @@
       grid-column: $col-span-5;
       border-width: $border-0 $border;
       border-color: $gray-200;
+    }
+
+    &__menu-text {
+      display: inline;
     }
   }
 }
